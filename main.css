@@ -238,3 +238,15 @@ max-width: 1000px;
   from {opacity: .4} 
   to {opacity: 1}
 }
+
+
+/* Indkøbskurv start*/
+.cart {
+    background-color: #ffffff;
+    height: 100%;
+    width: 35%;
+    
+}
+
+
+/* Indkøbskurv slut*/
