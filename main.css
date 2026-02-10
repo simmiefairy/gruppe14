@@ -1,3 +1,136 @@
+/* --- BASIS STYLING (Desktop) --- */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: Arial, sans-serif; background-color: #ffffff; }
+a { text-decoration: none; color: inherit; }
+
+.main-header {
+    background-color: #333;
+    padding: 15px 20px;
+    color: white;
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    max-width: 1400px;
+    margin: 0 auto;
+    flex-wrap: wrap; 
+}
+
+/* Menu Burger */
+.menu-toggle {
+    background: black;
+    border: none;
+    padding: 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex; flex-direction: column; gap: 4px;
+    order: 1; 
+}
+.menu-toggle:hover { background: #292929; }
+.menu-toggle span { display: block; width: 20px; height: 2px; background: white; }
+
+/* Logo */
+.logo { order: 2; margin-right: auto; }
+.logo img { height: 30px; display: block; }
+
+/* Søgefelt */
+.search-container {
+    display: flex;
+    flex-grow: 1;
+    background: white;
+    border-radius: 4px;
+    overflow: hidden;
+    margin: 0 15px;
+    order: 3;
+    height: 44px;
+}
+.search-container input { border: none; padding: 0 12px; flex-grow: 1; outline: none; font-size: 14px; }
+.search-btn { background: white; border: none; padding: 0 15px; cursor: pointer; font-size: 18px; }
+
+/* Ikoner gruppe (Chat, Butik, Hjerte) */
+.nav-links { display: flex; gap: 10px; order: 4; }
+
+/* Generel knap stil */
+.nav-item {
+    background-color: black;
+    color: #ffffff; 
+    padding: 0 15px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: bold;
+    display: flex; align-items: center; gap: 8px;
+    white-space: nowrap;
+    height: 44px;
+}
+.nav-item:hover { background-color: #292929; }
+
+/* Kurven (Orange) - Skal ligge MELLEM nav-links og user på desktop */
+.cart-btn {
+    background-color: #f96700;
+    color: white;
+    padding: 0 15px;
+    border-radius: 4px;
+    display: flex; align-items: center; justify-content: center;
+    order: 5; /* Kommer efter nav-links (hjerte) */
+    height: 44px;
+}
+.cart-btn:hover { background-color: #e35f01; }
+
+/* MyPOWER - Skal ligge TIL SIDST på desktop */
+.nav-item.user {
+    order: 6; /* Kommer efter kurven */
+}
+
+/* -------------------------------------------------------- */
+/* --- TABLET / MELLEM (Responsiv logik) --- */
+/* -------------------------------------------------------- */
+@media (max-width: 1100px) {
+    
+    /* 1. Søgefeltet tvinges ned på ny linje */
+    .search-container {
+        order: 10; /* Højt tal = kommer sent */
+        width: auto; 
+        margin: 10px 10px 0 0; 
+        flex-basis: 60%; 
+    }
+
+    /* 2. Kurven tvinges ned ved siden af søgefeltet */
+    .cart-btn {
+        order: 11; /* Lige efter søgefeltet */
+        margin-top: 10px;
+        flex-shrink: 0; 
+    }
+
+    /* 3. MyPOWER skal blive oppe (før søgefeltet) */
+    .nav-item.user {
+        order: 5; /* Før søgefeltet hopper ned */
+    }
+
+    /* 4. Ikonerne (Nav-links) bliver hvor de er */
+    .nav-links {
+        order: 3; 
+    }
+
+    /* Skjul teksten i knapperne */
+    .nav-item .text { display: none; }
+    
+    /* Gør knapper kvadratiske */
+    .nav-item { padding: 0; width: 44px; justify-content: center; }
+}
+
+/* -------------------------------------------------------- */
+/* --- MOBIL (Skjul chat og find butik) --- */
+/* -------------------------------------------------------- */
+@media (max-width: 600px) {
+    .nav-item.chat, 
+    .nav-item.store,
+    .cart-btn {
+        display: none;
+    }
+    .search-container { margin-right: 10px; }
+}
 /* Gør hero-overskriften større */
 .hero h1 {
     font-size: 3rem;
