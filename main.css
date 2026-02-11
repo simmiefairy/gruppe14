@@ -240,7 +240,7 @@ max-width: 1000px;
 }
 
 
-/* INDKØBSKURV STYLING */
+/* INDKØBSKURV STYLING START */
     /* Backdrop (Mørk baggrund) */
     .backdrop {
         position: fixed;
@@ -381,3 +381,62 @@ max-width: 1000px;
             width: 100%;
         }
     }
+
+
+/* --- Styling af selve indholdet i Senest Sete --- */
+
+.senest-kort {
+    display: flex;
+    align-items: center;
+    padding: 15px; /* Mere luft indeni kortet */
+    border-bottom: 1px solid #eee;
+    gap: 15px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    text-align: left; /* Vigtigt: Navn og pris skal stå til venstre */
+}
+
+.billede-container {
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.senest-billede {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.senest-info {
+    flex: 1;
+}
+
+.senest-navn {
+    font-size: 13px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 5px;
+    line-height: 1.3;
+}
+
+.senest-pris {
+    font-size: 16px;
+    font-weight: 700;
+    color: #ef6637; /* Power Orange */
+}
+
+/* Din eksisterende hover-effekt herunder vil nu virke bedre, 
+fordi kortet har padding og hvid baggrund */
+.senest-kort:hover {
+    background-color: #ffffff;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    transform: translateY(-2px);
+    border-radius: 8px;
+    border-bottom-color: transparent; /* Fjerner stregen når vi hover */
+}
+
+/* INDKØBSKURV STYLING SLUT */

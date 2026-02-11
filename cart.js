@@ -1,5 +1,23 @@
 /* --- Data: Senest Sete Produkter --- */
-let produkter = []; 
+let produkter = [
+    { 
+        navn: "Nilfisk One MBB10P05A1 støvsuger", 
+        pris: "649,-", 
+        billede: "images/produkt1_copy.png" 
+    },
+    { 
+        navn: "Lenovo Legion R24e 23,8\" Full HD gamingskærm", 
+        pris: "599,-", 
+        billede: "images/produkt2_copy.png" 
+    },
+    { 
+        navn: "Eico 80X ANNIVERSARY ED induktionskogeplade med integreret emhætte", 
+        pris: "7499,-", 
+        billede: "images/produkt3_copy.png" 
+    }
+];
+
+// ... resten af din kode (funktioner og events) fortsætter herunder ...
 
 /* --- Hent elementer --- */
 const sidebar = document.getElementById("sidebar");
@@ -59,14 +77,16 @@ function opdaterListen() {
             </div>
         `;
     } else {
-        // Hvis der senere tilføjes produkter
+        // Her bygger vi listen med de rigtige klasser til styling
         for (let produkt of produkter) {
             let html = `
-                <div style="display:flex; gap:10px; margin-bottom:10px; border-bottom:1px solid #eee; padding-bottom:10px;">
-                    <img src="${produkt.billede}" style="width:50px;">
-                    <div>
-                        <h3>${produkt.navn}</h3>
-                        <p>${produkt.pris}</p>
+                <div class="senest-kort">
+                    <div class="billede-container">
+                        <img src="${produkt.billede}" class="senest-billede">
+                    </div>
+                    <div class="senest-info">
+                        <div class="senest-navn">${produkt.navn}</div>
+                        <div class="senest-pris">${produkt.pris}</div>
                     </div>
                 </div>
             `;
