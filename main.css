@@ -1,3 +1,52 @@
+/* Carousel billeder og knapper horisontal linje */
+.billede-knapper {
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+    align-items: flex-start;
+}
+.billede-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.billede-container img {
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+    border-radius: 10px;
+}
+.knap-række {
+    display: flex;
+    gap: 8px;
+    margin-top: 8px;
+}
+.tilføj-kurv {
+    background-color: #ff7900;
+    color: #fff;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 18px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+.tilføj-kurv:hover {
+    background-color: #e86c00;
+}
+.tilføj-favorit {
+    background: #111;
+    border: none;
+    border-radius: 10px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #ff7900;
+    font-size: 1.3rem;
+}
 /* --- BASIS STYLING (Desktop) --- */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 body { font-family: Arial, sans-serif; background-color: #ffffff; }
