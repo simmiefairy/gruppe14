@@ -1,5 +1,4 @@
 /* --- Data: Senest Sete Produkter --- */
-// Vi lader den være tom for at vise "Ingen produkter"-beskeden
 let produkter = []; 
 
 /* --- Hent elementer --- */
@@ -8,7 +7,6 @@ const backdrop = document.getElementById("backdrop");
 const btnLuk = document.getElementById("btn-luk");
 const btnShopVidere = document.getElementById("btn-shop-videre");
 
-// VIGTIGT: Vi henter knappen fra headeren via det ID vi tilføjede i Trin 1
 const cartTrigger = document.getElementById("cart-trigger");
 
 const faneKurv = document.getElementById("fane-kurv");
@@ -61,7 +59,7 @@ function opdaterListen() {
             </div>
         `;
     } else {
-        // Hvis du senere tilføjer produkter
+        // Hvis der senere tilføjes produkter
         for (let produkt of produkter) {
             let html = `
                 <div style="display:flex; gap:10px; margin-bottom:10px; border-bottom:1px solid #eee; padding-bottom:10px;">
@@ -79,7 +77,6 @@ function opdaterListen() {
 
 /* --- Events --- */
 
-// Lyt efter klik på posen i headeren
 if(cartTrigger) {
     cartTrigger.addEventListener("click", skiftMenuStatus);
 }
