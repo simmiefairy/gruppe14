@@ -240,145 +240,142 @@ max-width: 1000px;
 }
 
 
-/* ========================================= */
-/* DIN INDKØBSKURV STYLING */
-/* ========================================= */
-
-/* Backdrop (Mørk baggrund) */
-.backdrop {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0,0,0,0.5);
-    display: none;
-    z-index: 9998; /* Meget højt lag */
-}
-
-.backdrop.vis {
-    display: block;
-}
-
-/* Sidebar (Selve kurven) */
-.sidebar {
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: 400px; /* Desktop bredde */
-    max-width: 100%; /* Mobil sikring */
-    height: 100vh;
-    background-color: white;
-    box-shadow: -5px 0 15px rgba(0,0,0,0.1);
-    display: flex;
-    flex-direction: column;
-    z-index: 9999; /* Skal ligge over alt andet (også backdrop) */
-    transform: translateX(100%);
-    transition: transform 0.3s ease-in-out;
-    font-family: 'Montserrat', sans-serif; /* Matcher deres font */
-}
-
-.sidebar.vis {
-    transform: translateX(0);
-}
-
-/* Cart Header */
-.cart-header {
-    padding: 20px;
-    background-color: white;
-}
-
-.luk-knap {
-    position: absolute;
-    top: 15px;
-    right: 20px;
-    background: none;
-    border: none;
-    font-size: 28px;
-    cursor: pointer;
-    color: #333;
-}
-
-.faner {
-    display: flex;
-    margin-top: 25px;
-    border-bottom: 2px solid #e0e0e0;
-}
-
-.fane {
-    padding-bottom: 10px;
-    margin-right: 20px;
-    cursor: pointer;
-    font-size: 14px;
-    color: #777;
-    position: relative;
-    top: 2px;
-}
-
-.fane.aktiv {
-    color: #ef6637; /* Power Orange */
-    border-bottom: 2px solid #ef6637;
-    font-weight: bold;
-}
-
-/* Indhold */
-.indhold {
-    flex: 1;
-    padding: 30px;
-    text-align: center;
-    overflow-y: auto;
-    color: #333;
-}
-
-.indhold h2 {
-    font-size: 18px;
-    font-weight: 700;
-    text-transform: uppercase;
-    margin-bottom: 10px;
-    margin-top: 20px;
-}
-
-.indhold p {
-    font-size: 14px;
-    line-height: 1.5;
-}
-
-/* Cart Footer */
-.cart-footer {
-    padding: 20px;
-    border-top: 1px solid #eee;
-}
-
-.shop-knap {
-    width: 100%;
-    padding: 15px;
-    background-color: #ffffff;
-    border: 1px solid #ccc;
-    color: #333;
-    font-weight: bold;
-    font-size: 14px;
-    cursor: pointer;
-    border-radius: 4px;
-    transition: background-color 0.2s;
-}
-
-.shop-knap:hover {
-    background-color: #f0f0f0;
-}
-
-/* Styling til 'Senest Sete' beskeden */
-.tom-besked {
-    margin-top: 40px;
-}
-.emoji-stor {
-    font-size: 50px;
-    display: block;
-    margin-bottom: 20px;
-}
-
-/* Responsiv: På mobil skal kurven fylde hele skærmen */
-@media (max-width: 600px) {
-    .sidebar {
+/* INDKØBSKURV STYLING */
+    /* Backdrop (Mørk baggrund) */
+    .backdrop {
+        position: fixed;
+        top: 0;
+        left: 0;
         width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.5);
+        display: none;
+        z-index: 9998; 
     }
-}
+
+    .backdrop.vis {
+        display: block;
+    }
+
+    /* Sidebar (Selve kurven) */
+    .sidebar {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 400px; /* Desktop bredde */
+        max-width: 100%; /* Mobil sikring */
+        height: 100vh;
+        background-color: white;
+        box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+        display: flex;
+        flex-direction: column;
+        z-index: 9999; /* Skal ligge over alt andet (også backdrop) */
+        transform: translateX(100%);
+        transition: transform 0.3s ease-in-out;
+        font-family: 'Montserrat', sans-serif; /* Matcher deres font */
+    }
+
+    .sidebar.vis {
+        transform: translateX(0);
+    }
+
+    /* Cart Header */
+    .cart-header {
+        padding: 20px;
+        background-color: white;
+    }
+
+    .luk-knap {
+        position: absolute;
+        top: 15px;
+        right: 20px;
+        background: none;
+        border: none;
+        font-size: 28px;
+        cursor: pointer;
+        color: #333;
+    }
+
+    .faner {
+        display: flex;
+        margin-top: 25px;
+        border-bottom: 2px solid #e0e0e0;
+    }
+
+    .fane {
+        padding-bottom: 10px;
+        margin-right: 20px;
+        cursor: pointer;
+        font-size: 14px;
+        color: #777;
+        position: relative;
+        top: 2px;
+    }
+
+    .fane.aktiv {
+        color: #ef6637; 
+        border-bottom: 2px solid #ef6637;
+        font-weight: bold;
+    }
+
+    /* Indhold */
+    .indhold {
+        flex: 1;
+        padding: 30px;
+        text-align: center;
+        overflow-y: auto;
+        color: #333;
+    }
+
+    .indhold h2 {
+        font-size: 18px;
+        font-weight: 700;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+        margin-top: 20px;
+    }
+
+    .indhold p {
+        font-size: 14px;
+        line-height: 1.5;
+    }
+
+    /* Cart Footer */
+    .cart-footer {
+        padding: 20px;
+        border-top: 1px solid #eee;
+    }
+
+    .shop-knap {
+        width: 100%;
+        padding: 15px;
+        background-color: #ffffff;
+        border: 1px solid #ccc;
+        color: #333;
+        font-weight: bold;
+        font-size: 14px;
+        cursor: pointer;
+        border-radius: 4px;
+        transition: background-color 0.2s;
+    }
+
+    .shop-knap:hover {
+        background-color: #f0f0f0;
+    }
+
+    /* Styling til 'Senest Sete' beskeden */
+    .tom-besked {
+        margin-top: 40px;
+    }
+    .emoji-stor {
+        font-size: 50px;
+        display: block;
+        margin-bottom: 20px;
+    }
+
+    /* Responsiv: På mobil skal kurven fylde hele skærmen */
+    @media (max-width: 600px) {
+        .sidebar {
+            width: 100%;
+        }
+    }
