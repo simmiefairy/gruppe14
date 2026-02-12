@@ -217,6 +217,16 @@ body {
     color: #333;
 }
 
+h3 {
+    margin-right: 106px;
+    margin-top: 2px;
+    padding: 16px 10px;
+    font-weight: bold;
+    border-left: 2px;
+    text-align: left;
+    color: #111;
+}
+
 /* Sidepanel til login */
 .login-panel {
     position: fixed;
