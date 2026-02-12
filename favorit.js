@@ -9,6 +9,8 @@ let redigeresNuId = null;
 // SLETTET: Koden der automatisk oprettede en liste hvis den var tom.
 // Nu starter vi helt tomt, hvis brugeren ikke har lavet noget endnu.
 
+const cartTrigger = document.getElementById("cart-trigger");
+
 function gemData() {
     localStorage.setItem('powerLister', JSON.stringify(lister));
 }
