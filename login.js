@@ -145,7 +145,6 @@ function openLoginPanel(event) {
   const overlay = document.getElementById('loginPanelOverlay');
   panel.classList.add('open');
   overlay.classList.add('open');
-  document.body.style.overflow = 'hidden';
 }
 
 function closeLoginPanel() {
@@ -153,5 +152,4 @@ function closeLoginPanel() {
   const overlay = document.getElementById('loginPanelOverlay');
   panel.classList.remove('open');
   overlay.classList.remove('open');
-  document.body.style.overflow = 'auto';
 }
