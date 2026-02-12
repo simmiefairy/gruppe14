@@ -47,20 +47,18 @@
         </span><img src="images/shopping_bag.svg" alt="Kurv"></span>
     </a>
 
-
+    <div class="dropdown">
+        <button class="dropbtn"><img src="images/person.svg" alt="Brugerikon"></button>
+        <div class="dropdown-content">
+            <p><strong>MyPOWER</strong></p>
+            <hr>
+            <a id="loginLogoutLink" href="#" onclick="handleLoginLogout(event)">Log ind</a>
+            <hr>
+            <a href="#">Tilmeld</a>
+        </div>
+    </div>
   <div id="loginPanelOverlay" class="login-panel-overlay" onclick="closeLoginPanel()"></div>
 
-  <div class="nav-item user">
-   <div class="dropdown">
-    <div class="dropdown-content">
-      <p><strong>MyPOWER</strong></p>
-      <hr>
-      <a id="loginLogoutLink" href="#" onclick="handleLoginLogout(event)">Log ind</a>
-      <hr>
-      <a href="#">Tilmeld</a>
-    </div>
-  </div>
-  </div>
 
   <!-- Sidepanel for login -->
   <div id="loginPanel" class="login-panel">

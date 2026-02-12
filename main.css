@@ -144,10 +144,10 @@ body {
 /* --- LOGIN SLUT --- */
 /* Dropdown */
 
-.dropdown{
+.dropdown {
     display: inline-block;
     text-align: left;
-    border: 1px solid #333;
+    order: 6;
 }
 
 .dropdown button {
@@ -157,9 +157,22 @@ body {
     border-radius: 4px;
     font-size: 14px;
     font-weight: bold;
-    display: flex; align-items: center; gap: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
     white-space: nowrap;
     height: 44px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropdown button:hover {
+    background-color: #292929;
+}
+
+.dropdown button img {
+    width: 20px;
+    height: 20px;
 }
 
 .dropdown a {
