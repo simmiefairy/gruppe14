@@ -47,10 +47,64 @@
         </span><img src="images/shopping_bag.svg" alt="Kurv"></span>
     </a>
 
-    <a href="#" class="nav-item user">
-        <span class="text">MyPOWER</span> 
-        </span><img src="images/person.svg" alt="Brugerikon"></span>
-    </a>
+
+  <div id="loginPanelOverlay" class="login-panel-overlay" onclick="closeLoginPanel()"></div>
+
+  <div class="nav-item user">
+   <div class="dropdown">
+    <div class="dropdown-content">
+      <p><strong>MyPOWER</strong></p>
+      <hr>
+      <a id="loginLogoutLink" href="#" onclick="handleLoginLogout(event)">Log ind</a>
+      <hr>
+      <a href="#">Tilmeld</a>
+    </div>
+  </div>
+  </div>
+
+  <!-- Sidepanel for login -->
+  <div id="loginPanel" class="login-panel">
+    <span class="close-btn" onclick="closeLoginPanel()">&times;</span>
+    <img src="mypower_rgb.svg" alt="MyPower Logo" class="login-logo">
+
+    <!-- Login container -->
+    <div class="login-container">
+      <!-- TRIN 1 -->
+      <div id="step1Panel">
+        <h2><strong>LOG IND PÅ MYPOWER</strong></h2>
+        <p>E-mail eller telefonnummer</p>
+        <input
+          type="text"
+          id="identifierPanel"
+          placeholder=" "
+        />
+        <p id="error1Panel" class="error-message"></p>
+        <button id="continueBtnPanel">Log ind 🡢 </button>
+      </div>
+
+      <!-- TRIN 2 -->
+      <div id="step2Panel" style="display:none;">
+        <p>Indtast adgangskode</p>
+        <input
+          type="password"
+          id="passwordPanel"
+          placeholder=" "
+        />
+        <p id="error2Panel" class="error-message"></p>
+        <button id="loginBtnPanel">Log ind 🡢 </button>
+      </div>
+
+      <div id="nyBrugerPanel">
+        <p>Ikke medlem af MyPower endnu?<a href="signup.html"> <u>Tilmeld</u></a></p>
+        <p>Glemt adgangskode? <a href="forgot-password.html"> <u>Nulstil din adgangskode</u></a></p>
+      </div>
+
+      <div class="piggypgn">
+        <img src="piggylogin.png" alt="Piggy Bank" class="piggy-login">
+      </div>
+    </div>
+  </div>
+  
 
   </div>
 </header>
@@ -178,6 +232,7 @@
     </div>
 
     <script src="cart.js"></script>
+    <script src="login.js"></script>
 
 <!-- INDKØBSKURV SLUT -->
 </body>

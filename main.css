@@ -136,6 +136,216 @@ a { text-decoration: none; color: inherit; }
     order: 6; /* Kommer efter kurven */
 }
 
+body {
+  font-family: "montserrat", Arial, sans-serif;
+}
+
+/*------------------------------------------------ */
+/* --- LOGIN SLUT --- */
+/* Dropdown */
+
+.dropdown{
+    display: inline-block;
+    text-align: left;
+    border: 1px solid #333;
+}
+
+.dropdown button {
+    background-color: black;
+    color: #ffffff; 
+    padding: 0 15px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: bold;
+    display: flex; align-items: center; gap: 8px;
+    white-space: nowrap;
+    height: 44px;
+}
+
+.dropdown a {
+    display: block;
+    color: black;
+    text-decoration: none;
+    padding: 16px 10px;
+    border-radius: 6px;
+    text-align: left;
+    }
+
+.dropdown p {
+    margin-right: 106px;
+    margin-top: 2px;
+    padding: 16px 10px;
+    font-weight: bold;
+    border-left: 2px;
+    text-align: left;
+}
+
+.dropdown-content {
+    background-color: white;
+    position: absolute;
+    width: 25%;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.717);
+    display: none;
+    border-radius: 5px;
+    border: 1px solid #333;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #333;
+}
+
+.dropdown a:hover {
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+/* Sidepanel til login */
+.login-panel {
+    position: fixed;
+    right: -800px;
+    top: 0;
+    width: 600px;
+    height: 100%;
+    background-color: white;
+    box-shadow: -2px 0 8px rgba(0, 0, 0, 0.2);
+    overflow-y: auto;
+    transition: right 0.3s ease-in-out;
+    z-index: 1000;
+    padding: 30px 20px;
+}
+
+.login-panel.open {
+    right: 0;
+}
+
+.login-container {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: -10px;
+    margin-bottom: 10px;
+}
+
+.login-panel .close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 40px;
+    font-weight: 50;
+    cursor: pointer;
+    color: #333;
+}
+
+.login-panel .close-btn:hover {
+    color: #cf4602;
+}
+
+.login-panel h2 {
+    margin-top: 0px;
+    margin-bottom: 30px;
+    font-size: 14px;
+    color: #333;
+}
+
+.login-panel p {
+    margin: 15px 0 10px 0;
+    color: #111;
+    font-weight: 550;
+    font-size: 14px;
+}
+
+.login-panel input {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+.login-panel input:focus {
+    outline: none;
+    border-color: #f96700;
+    box-shadow: 0 0 5px rgba(249, 103, 0, 0.2);
+}
+
+.login-panel button {
+    width: 100%;
+    padding: 12px;
+    background-color: #f96700;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.login-panel button:hover {
+    background-color: #ce472c;
+}
+
+.error-message {
+    color: #d32f2f;
+    font-size: 12px;
+    margin-top: 0px;
+    margin-bottom: 10px;
+}
+
+.login-panel #nyBrugerPanel,
+.login-panel #glemt-adgangskodePanel {
+    margin-top: 20px;
+}
+
+.login-panel a {
+    color: #333;
+    text-decoration: none;
+}
+
+.login-panel a:hover {
+    text-decoration: underline;
+}
+
+/* Overlay/backdrop */
+.login-panel-overlay {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    z-index: 999;
+}
+
+.login-panel-overlay.open {
+    display: block;
+}
+
+.login-logo {
+    display: block;
+    margin: 0 0 30px 0;
+    width: 180px;
+    height: auto;
+}
+
+.piggy-login {
+    display: block;
+    margin-left: -10%;
+    margin-top: 15px;
+    width: 700px;
+    height: auto;
+}
+
+/*------------------------------------------------ */
+/* --- LOGIN SLUT --- */
+
 /* -------------------------------------------------------- */
 /* --- TABLET / MELLEM (Responsiv logik) --- */
 /* -------------------------------------------------------- */
