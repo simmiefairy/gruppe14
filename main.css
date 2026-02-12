@@ -820,6 +820,86 @@ input:checked + .slider { background-color: #ff5a14; }
 input:checked + .slider:before { transform: translateX(24px); }
 .slider.round { border-radius: 34px; }
 .slider.round:before { border-radius: 50%; }
+
+/* Stil til indkøbskurv items */
+.kurv-item {
+    display: flex;
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+    gap: 15px;
+    align-items: flex-start;
+}
+
+.kurv-billede {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 4px;
+    flex-shrink: 0;
+}
+
+.kurv-info {
+    flex: 1;
+}
+
+.kurv-navn {
+    font-weight: bold;
+    font-size: 14px;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.kurv-pris {
+    font-size: 14px;
+    color: #ef6637;
+    font-weight: bold;
+}
+
+.kurv-mængde {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-left: 10px;
+}
+
+.mængde-btn {
+    background-color: #f0f0f0;
+    border: 1px solid #ddd;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 3px;
+    font-weight: bold;
+    transition: background-color 0.2s;
+}
+
+.mængde-btn:hover {
+    background-color: #e0e0e0;
+}
+
+.fjern-btn {
+    background-color: #f0f0f0;
+    border: 1px solid #ddd;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 3px;
+    font-weight: bold;
+    color: #d32f2f;
+    transition: background-color 0.2s;
+    margin-left: 10px;
+}
+
+.fjern-btn:hover {
+    background-color: #ffebee;
+}
+
+.kurv-total {
+    padding: 15px;
+    border-top: 2px solid #eee;
+    font-size: 16px;
+    text-align: right;
+    color: #333;
+}
+
 /* Responsiv: På mobil skal kurven fylde hele skærmen */
 @media (max-width: 600px) {
     .sidebar {
