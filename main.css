@@ -148,6 +148,7 @@ body {
     display: inline-block;
     text-align: left;
     order: 6;
+    flex-shrink: 0;
 }
 
 .dropdown button {
@@ -225,7 +226,7 @@ body {
     height: 100%;
     background-color: white;
     box-shadow: -2px 0 8px rgba(0, 0, 0, 0.2);
-    overflow-y: auto;
+    overflow-x: hidden;
     transition: right 0.3s ease-in-out;
     z-index: 1000;
     padding: 30px 20px;
@@ -602,7 +603,7 @@ max-width: 1000px;
     flex: 1;
     padding: 30px;
     text-align: center;
-    overflow-y: auto;
+    overflow-x: hidden;
     color: #333;
 }
 
