@@ -1,4 +1,4 @@
-/* --- Data: Kurv og Senest Sete Produkter --- */
+/* Data: Kurv og Senest Sete Produkter */
 let indkøbskurv = [];
 let produkter = [
     { 

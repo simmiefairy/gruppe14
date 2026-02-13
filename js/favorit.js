@@ -1,15 +1,10 @@
-
-// ==========================================
 // 1. DATA HÅNDTERING
-// ==========================================
+
 
 // Insp = https://www.youtube.com/watch?v=1vdEH2bX9QE & https://www.w3schools.com/js/js_json.asp
 let lister = JSON.parse(localStorage.getItem('powerLister')) || [];
 // Variabel til at huske hvilken liste der redigeres lige nu
 let redigeresNuId = null;
-
-// SLETTET: Koden der automatisk oprettede en liste hvis den var tom.
-// Vi starter helt tomt, hvis brugeren ikke har lavet noget endnu.
 
 const cartTrigger = document.getElementById("cart-trigger");
 
@@ -17,9 +12,8 @@ function gemData() {
     localStorage.setItem('powerLister', JSON.stringify(lister));
 }
 
-// ==========================================
+
 // 2. OPSTART
-// ==========================================
 document.addEventListener('DOMContentLoaded', () => {
     const container = document.getElementById('lists-container');
     if (container) renderLists();
@@ -50,9 +44,7 @@ function setupInputListeners() {
     }
 }
 
-// ==========================================
 // 3. FUNKTIONER TIL FORSIDEN
-// ==========================================
 function tilfojTilFavorit(id, navn, pris, btn) {
     console.log("Knap trykket! ID:", id); 
 
@@ -121,9 +113,7 @@ function opdaterKnapperPaForsiden() {
         }
     });
 }
-// ==========================================
 // 4. VISNING AF LISTER (RENDER)
-// ==========================================
 function renderLists() {
     const container = document.getElementById('lists-container');
     if (!container) return; 
@@ -224,9 +214,7 @@ function sletProdukt(listeId, produktId) {
     }
 }
 
-// ==========================================
 // 5. OPRET NY LISTE (PANEL)
-// ==========================================
 function abnOpretPanel() {
     const input = document.getElementById('list-name-input');
     input.value = '';
@@ -256,9 +244,7 @@ function gemNyListe() {
     gemData(); renderLists(); lukOpretPanel();
 }
 
-// ==========================================
 // 6. REDIGER / SLET LISTE (PANEL)
-// ==========================================
 
 function abnRedigerPanel(id) {
     const liste = lister.find(l => l.id === id);
