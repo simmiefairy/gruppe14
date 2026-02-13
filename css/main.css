@@ -140,10 +140,8 @@ body {
   font-family: "montserrat", Arial, sans-serif;
 }
 
-/*------------------------------------------------ */
 /* --- LOGIN SLUT --- */
 /* Dropdown */
-
 .dropdown {
     display: inline-block;
     text-align: left;
@@ -372,13 +370,9 @@ h3 {
     width: 700px;
     height: auto;
 }
-
-/*------------------------------------------------ */
 /* --- LOGIN SLUT --- */
 
-/* -------------------------------------------------------- */
-/* --- TABLET / MELLEM (Responsiv logik) --- */
-/* -------------------------------------------------------- */
+/* --- TABLET / MELLEM (Responsiv) --- */
 @media (max-width: 1100px) {
     
     /* 1. Søgefeltet tvinges ned på ny linje */
@@ -413,9 +407,7 @@ h3 {
     .nav-item { padding: 0; width: 44px; justify-content: center; }
 }
 
-/* -------------------------------------------------------- */
 /* --- MOBIL (Skjul chat og find butik) --- */
-/* -------------------------------------------------------- */
 @media (max-width: 600px) {
     .nav-item.chat, 
     .nav-item.store,
@@ -426,7 +418,7 @@ h3 {
 }
 /* HER ENDER NAV-LINJE */
 
-/* Gør hero-overskriften større */
+/* hero-overskriften større */
 .hero h1 {
     font-size: 3rem;
     letter-spacing: 2px;
@@ -533,9 +525,7 @@ max-width: 1000px;
 }
 
 
-/* ========================================= */
-/* DIN INDKØBSKURV STYLING */
-/* ========================================= */
+/* INDKØBSKURV STYLING */
 
 /* Backdrop (Mørk baggrund) */
 .backdrop {
@@ -546,7 +536,7 @@ max-width: 1000px;
     height: 100%;
     background-color: rgba(0,0,0,0.5);
     display: none;
-    z-index: 9998; /* Meget højt lag */
+    z-index: 9998;
 }
 
 .backdrop.vis {
@@ -568,7 +558,7 @@ max-width: 1000px;
     z-index: 9999; /* Skal ligge over alt andet (også backdrop) */
     transform: translateX(100%);
     transition: transform 0.3s ease-in-out;
-    font-family: 'Montserrat', sans-serif; /* Matcher deres font */
+    font-family: 'Montserrat', sans-serif;
 }
 
 .sidebar.vis {
@@ -609,7 +599,7 @@ max-width: 1000px;
 }
 
 .fane.aktiv {
-    color: #ef6637; /* Power Orange */
+    color: #ef6637;
     border-bottom: 2px solid #ef6637;
     font-weight: bold;
 }
@@ -673,7 +663,7 @@ max-width: 1000px;
 body { font-family: Arial, sans-serif; background-color: #f9f9f9; } /* Rettet bg farve */
 a { text-decoration: none; color: inherit; }
 
-/* --- HEADER STYLES (Beholdt fra din kode) --- */
+/* --- HEADER STYLES --- */
 .main-header {
     background-color: #333;
     padding: 15px 0;
@@ -684,12 +674,12 @@ a { text-decoration: none; color: inherit; }
     display: flex;
     align-items: center;
     gap: 15px;
-    margin: 0 14.3%; /* VIGTIG MARGIN - Vi genbruger denne til indholdet */
+    margin: 0 14.3%;
     width: auto; 
     flex-wrap: wrap; 
 }
 
-/* Menu Burger & Logo & Search & Nav Items (Beholdt fra din kode) */
+/* Menu Burger & Logo & Search & Nav Items */
 .menu-toggle { background: black; border: none; padding: 12px; border-radius: 4px; cursor: pointer; display: flex; flex-direction: column; gap: 4px; order: 1; }
 .menu-toggle:hover { background: #292929; }
 .menu-toggle span { display: block; width: 20px; height: 2px; background: white; }
@@ -706,7 +696,7 @@ a { text-decoration: none; color: inherit; }
 .cart-btn:hover { background-color: #e35f01; }
 .nav-item.user { order: 6; }
 
-/* === MEDIA QUERIES (Beholdt) === */
+/* MEDIA QUERIES */
 @media (max-width: 1100px) {
     .header-container { margin: 0 20px; }
     .nav-links { order: 3; }
@@ -721,14 +711,10 @@ a { text-decoration: none; color: inherit; }
     .search-container { margin-right: 10px; }
 }
 
-/* ================================================================= */
-/* === NYT: SIDE LAYOUT (Matcher Header Margin) === */
-/* ================================================================= */
-
+/* SIDE LAYOUT */
 .page-content {
-    /* Dette matcher headerens margin (14.3%), så indholdet flugter */
     margin: 0 14.3%;
-    padding-top: 20px; /* Lidt luft ned fra menuen */
+    padding-top: 20px;
 }
 
 /* Tablet justering af sidens margin */
@@ -739,7 +725,7 @@ a { text-decoration: none; color: inherit; }
 /* --- Tilbage Knap --- */
 .back-btn-container {
     margin-bottom: 20px;
-    text-align: left; /* Sikrer den står til venstre */
+    text-align: left; 
 }
 
 .back-link { 
