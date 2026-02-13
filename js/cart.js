@@ -121,8 +121,6 @@ function opdaterKurvDisplay() {
     }
 }
 
-// ... resten af din kode (funktioner og events) fortsætter herunder ...
-
 /* --- Hent elementer --- */
 const sidebar = document.getElementById("sidebar");
 const backdrop = document.getElementById("backdrop");
@@ -181,7 +179,6 @@ function opdaterListen() {
             </div>
         `;
     } else {
-        // Her bygger vi listen med de rigtige klasser til styling
         for (let produkt of produkter) {
             let html = `
                 <div class="senest-kort">
