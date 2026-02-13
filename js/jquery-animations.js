@@ -27,3 +27,5 @@ $(document).ready(function() {
     });
 
 });
+
+// Pensum: jQuery selectors, events, animate(), addClass(), removeClass()
