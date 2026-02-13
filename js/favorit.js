@@ -3,12 +3,13 @@
 // 1. DATA HÅNDTERING
 // ==========================================
 
+// Insp = https://www.youtube.com/watch?v=1vdEH2bX9QE & https://www.w3schools.com/js/js_json.asp
 let lister = JSON.parse(localStorage.getItem('powerLister')) || [];
 // Variabel til at huske hvilken liste der redigeres lige nu
 let redigeresNuId = null;
 
 // SLETTET: Koden der automatisk oprettede en liste hvis den var tom.
-// Nu starter vi helt tomt, hvis brugeren ikke har lavet noget endnu.
+// Vi starter helt tomt, hvis brugeren ikke har lavet noget endnu.
 
 const cartTrigger = document.getElementById("cart-trigger");
 
@@ -53,58 +54,73 @@ function setupInputListeners() {
 // 3. FUNKTIONER TIL FORSIDEN
 // ==========================================
 function tilfojTilFavorit(id, navn, pris, btn) {
-    // SIKKERHEDSNET: Hvis brugeren klikker hjerte, men ingen lister findes,
-    // så opretter vi en automatisk, så varen ikke forsvinder ud i den blå luft.
+    console.log("Knap trykket! ID:", id); 
+
     if (lister.length === 0) {
         lister.push({ id: Date.now(), navn: 'Favoritter', produkter: [] });
     }
 
-    let standardListe = lister[0]; // Lægger altid i første liste
-
+    let standardListe = lister[0]; 
     const eksisterer = standardListe.produkter.find(p => p.id === id);
-    const icon = btn.querySelector('i');
+    
+    const icon = btn.querySelector('.heart-icon');
+
+    if (!icon) {
+        console.error("Kunne ikke finde billedet med klassen .heart-icon inde i knappen!");
+        return;
+    }
 
     if (!eksisterer) {
+        // Tilføj
         standardListe.produkter.push({ id, navn, pris });
-        btn.classList.add('active');
-        icon.classList.remove('fa-regular');
-        icon.classList.add('fa-solid');
+        btn.classList.add('active'); 
+        
+        // SKIFT BILLEDE TIL FYLDT HJERTE
+        console.log("Skifter til fyldt hjerte");
+        icon.src = 'images/favorite_f.svg'; 
+        
     } else {
+        // Fjern
         standardListe.produkter = standardListe.produkter.filter(p => p.id !== id);
         btn.classList.remove('active');
-        icon.classList.add('fa-regular');
-        icon.classList.remove('fa-solid');
+        
+        // SKIFT BILLEDE TIL TOMT HJERTE
+        console.log("Skifter til tomt hjerte");
+        icon.src = 'images/favorite_h.svg';
     }
+    
     gemData();
 }
 
 function opdaterKnapperPaForsiden() {
-    // Hvis der ingen lister er, kan ingen knapper være aktive
     if (lister.length === 0) return;
-
-    const knapper = document.querySelectorAll('.fav-btn');
+    
+    const knapper = document.querySelectorAll('.tilføj-favorit');
     if (knapper.length === 0) return;
     
     const standardListe = lister[0];
 
     knapper.forEach(btn => {
-        const id = btn.getAttribute('onclick').split("'")[1]; 
+        const onclickStr = btn.getAttribute('onclick');
+        if(!onclickStr) return;
+        
+        const id = onclickStr.split("'")[1]; 
         const findes = standardListe.produkter.some(p => p.id === id);
-        const icon = btn.querySelector('i');
+        
+        // Find billedet
+        const icon = btn.querySelector('.heart-icon');
         
         if (findes) {
             btn.classList.add('active');
-            icon.classList.remove('fa-regular');
-            icon.classList.add('fa-solid');
+            // Sørg for den er fyldt ved reload
+            icon.src = 'images/favorite_f.svg';
         } else {
-            // Sørg for at nulstille, hvis varen blev fjernet fra listen manuelt
             btn.classList.remove('active');
-            icon.classList.add('fa-regular');
-            icon.classList.remove('fa-solid');
+            // Sørg for den er tom ved reload
+            icon.src = 'images/favorite_h.svg';
         }
     });
 }
-
 // ==========================================
 // 4. VISNING AF LISTER (RENDER)
 // ==========================================
@@ -113,10 +129,8 @@ function renderLists() {
     if (!container) return; 
     container.innerHTML = ''; 
 
-    // Hvis ingen lister findes, viser vi bare ingenting (eller en lille besked hvis du vil)
+    // Hvis ingen lister findes, viser vi bare ingenting
     if (lister.length === 0) {
-        // Her kan du evt. skrive container.innerHTML = "<p>Ingen lister endnu...</p>";
-        // Men lige nu lader vi den være helt tom som ønsket.
         return; 
     }
 
@@ -182,7 +196,7 @@ function renderLists() {
 
         container.appendChild(wrapper);
         
-        // Åbn altid den første liste automatisk, hvis der er nogen
+        // Åbn altid den første liste automatisk, hvis der er en liste
         if(index === 0) {
             const arrow = document.getElementById(`arrow-${index}`);
             if(arrow) arrow.classList.add('open');
